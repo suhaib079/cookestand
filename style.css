@@ -14,5 +14,18 @@ img {
     height: 200px;
     border-radius: 20px;
 }
-
+.navhead {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0 ,0, .5);
+    background-color: darkgrey;
+}
+.last {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: darkred;
+    margin: 100px;
+    width: 100%;
+}
 
