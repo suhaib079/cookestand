@@ -1,54 +1,54 @@
 'use stirct'
-function Citys(cityname, mincost, maxcost, avgcookie) {
-    this.cityname = cityname;
-    this.mincost = mincost;
-    this.maxcost = maxcost;
-    this.avgcookie = avgcookie;
-    this.totalcookies = 0;
-    this.costmerperhour = [];
-    this.cookiesperhour = [];
-}
-Citys.prototype.cost = function () {
-    for (let i = 0; i < 14; i++) {
-        this.costmerperhour.push(Math.floor(Math.random() * (this.maxcost - this.mincost + 1) + this.mincost));
-    }
-}
-Citys.prototype.cookiessales = function () {
-    for (let i = 0; i < 14; i++) {
-        this.cookiesperhour.push(Math.floor(this.costmerperhour[i] * this.avgcookie));
-    }
-}
-Citys.prototype.total = function () {
-    for (let i = 0; i < 14; i++) {
-        this.totalcookies = this.totalcookies + this.cookiesperhour[i];
-    }
-};
+// function Citys(cityname, mincost, maxcost, avgcookie) {
+//     this.cityname = cityname;
+//     this.mincost = mincost;
+//     this.maxcost = maxcost;
+//     this.avgcookie = avgcookie;
+//     this.totalcookies = 0;
+//     this.costmerperhour = [];
+//     this.cookiesperhour = [];
+// }
+// Citys.prototype.cost = function () {
+//     for (let i = 0; i < 14; i++) {
+//         this.costmerperhour.push(Math.floor(Math.random() * (this.maxcost - this.mincost + 1) + this.mincost));
+//     }
+// }
+// Citys.prototype.cookiessales = function () {
+//     for (let i = 0; i < 14; i++) {
+//         this.cookiesperhour.push(Math.floor(this.costmerperhour[i] * this.avgcookie));
+//     }
+// }
+// Citys.prototype.total = function () {
+//     for (let i = 0; i < 14; i++) {
+//         this.totalcookies = this.totalcookies + this.cookiesperhour[i];
+//     }
+// };
 
-var seattle = new Citys('seattle', 23, 65, 6.3);
-seattle.cost();
-seattle.cookiessales();
-seattle.total();
-console.log(seattle)
+// var seattle = new Citys('seattle', 23, 65, 6.3);
+// seattle.cost();
+// seattle.cookiessales();
+// seattle.total();
+// console.log(seattle)
 
-var tokyo = new Citys('tokyo', 3, 24, 1.2);
-tokyo.cost();
-tokyo.cookiessales();
-tokyo.total();
+// var tokyo = new Citys('tokyo', 3, 24, 1.2);
+// tokyo.cost();
+// tokyo.cookiessales();
+// tokyo.total();
 
-var dubai = new Citys('dubai', 3, 24, 1.2);
-dubai.cost();
-dubai.cookiessales();
-dubai.total();
+// var dubai = new Citys('dubai', 3, 24, 1.2);
+// dubai.cost();
+// dubai.cookiessales();
+// dubai.total();
 
-var paris = new Citys('paris', 3, 24, 1.2);
-paris.cost();
-paris.cookiessales();
-paris.total();
+// var paris = new Citys('paris', 3, 24, 1.2);
+// paris.cost();
+// paris.cookiessales();
+// paris.total();
 
-var lima = new Citys('lima', 3, 24, 1.2);
-lima.cost();
-lima.cookiessales();
-lima.total();
+// var lima = new Citys('lima', 3, 24, 1.2);
+// lima.cost();
+// lima.cookiessales();
+// lima.total();
 let hours = [
     "6:00am",
     "7:00am",
@@ -66,8 +66,8 @@ let hours = [
     "7:00pm",
     "8:00pm",
   ];
-var table = document.createElement("table");
-var div = document.getElementById("our-store");
+//var table = document.createElement("table");
+var table = document.getElementById("our-store");
 
 function getRandomInt(minvalue, maxvalue) {
   var randomNum = Math.random();
@@ -137,7 +137,6 @@ function Header() {
   td.textContent = "Daily Location Total";
   tr.appendChild(td);
   table.appendChild(tr);
-  div.appendChild(table);
 }
 
 function Footer() {
@@ -166,7 +165,6 @@ function Footer() {
   td.textContent = totalGrand;
   tr.appendChild(td);
   table.appendChild(tr);
-  div.appendChild(table);
 }
 Header();
 var Seattle = new Shop("Seattle", 23, 65, 6.3);
@@ -180,8 +178,30 @@ var Lima = new Shop("Lima", 30, 70, 7.2);
 Lima.getCustomer();
 Lima.getCookies();
 Seattle.Suhib();
+
 console.log("Shops : ", Shops);
 Footer();
+
+var addcity = document.getElementById('cityname');
+
+addcity.addEventListener('submit',adding);
+function adding(event){
+  event.preventDefault();
+  table.innerHTML=''
+
+ var newname =event.target.name.value;
+ var min = event.target.minnumber.value;
+ var max = event.target.maxnumber.value;
+ var avg = event.target.avgnumber.value;
+
+var addedcity = new Shop(newname, min,max,avg)
+addedcity.getCustomer();
+addedcity.getCookies();
+Header();
+Seattle.Suhib();
+Footer();
+
+}
 
 // var creartable = document.getElementById('table');
 // creartable.appendChild(creartable);

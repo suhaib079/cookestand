@@ -28,4 +28,9 @@ img {
     margin: 100px;
     width: 100%;
 }
+legend {
+    background-color: black;
+    color: white;
+    padding: 5px 30px;
+}
 
