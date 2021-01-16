@@ -189,7 +189,7 @@ function adding(event){
   event.preventDefault();
   table.innerHTML=''
 
- var newname =event.target.name.value;
+ var newname =event.target.name.value. required;
  var min = event.target.minnumber.value;
  var max = event.target.maxnumber.value;
  var avg = event.target.avgnumber.value;
